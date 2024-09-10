@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="shortcut icon" href="./img/favicon_maze.png" type="image/x-icon">
+        <title>Maze - Mapa de Monitoramento Territorial</title>
+    </head>
+    <body>
+        <header>
+            <div class="cabecalho__navbar">
+                <div class="navbar__container">
+                    <button class="menu__botao">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <nav class="menu">
+                        <ul class="menu__lista">
+                            <img src="./img/Gps_Maze.PNG" alt="logo da maze e seta de localização">
+                            <li class="lista__item">
+                                <a href="#fazer__denuncia" class="item__link">Fazer denuncia</a>
+                            </li>
+                            <li class="lista__item">
+                                <a href="#ver__denuncia" class="item__link">Ver suas denuncias</a>
+                            </li>
+                            <li class="lista__item">
+                                <a href="#indica__app" class="item__link">Indicar o Maze</a>
+                            </li>
+                            <li class="lista__item lista__item__botao">
+                                <a href="#suporte" class="item__botao">Suporte</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <img src="./img/Maze_Text.png" alt="Logo Maze" class="maze__logo">
+                <div class="cabecalho__logo">
+                    <a href="#">
+                        <img src="./img/Sino_Vetor.png" alt="Sino" class="logo__imagem">
+                    </a>
+                </div>
+        </header>
+    
+        <main>
+    
+            <!-- Pagina Home -->
+            <section class="home">
+                <img src="./img/Menu_Icon.png" alt="Menu__Image">
+                <div class="btns">
+                    <button class="entrar">Entrar</button>  
+                    <button class="anonimo">Continuar anonimamente</button>
+                </div>
+            </section>
+    
+            <!-- Formulario -->
+            <section class="login">
+                <img src="./img/Menu_Icon_Invert.png" alt="Menu__Image">
+                <form>
+                    <label for="Email">Email<br>
+                        <input type="text" placeholder="vamosganharafeceap@gmail.com">
+                    </label>
+                    <label for="Senha">Senha<br>
+                        <input type="password" placeholder="*****************">
+                    </label>
+                    <label for="Telefone">Telefone<br>
+                        <input type="text" placeholder="(11) 93015-9782">
+                    </label>
+                    <button class="entrar_submit">Entrar</button>
+                </form>
+            </section>
+    
+            <!-- Mapa do Maze _ Conta do CEAP não funciona -->
+            <section class="inicial">
+                <iframe src="https://www.google.com/maps/d/embed?mid=15s1FRp-tM4idnHr7gjJc9l_EHlKe2so&ehbc=2E312F&noprof=1" width="340" height="590"></iframe>
+            </section>
+    
+        </main>
+    
+        <footer>
+            <p>Todos os direito autorais © - 2024</p>        
+        </footer>
+        <script src="cordova.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>

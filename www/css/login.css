@@ -1,0 +1,44 @@
+.login {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login img {
+    width: 11.5em;
+    height: 14em;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    gap: 20px;
+}
+
+form label {
+    font-size: 28px;
+}
+
+form input {
+    width: 19em;
+    height: 3.4em;
+    padding-left: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+form input::placeholder {
+    font-size: 14px;
+}
+
+form button {
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 3px #7e217f;
+    width: 180px;
+    height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+}
