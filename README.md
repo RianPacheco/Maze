@@ -1,4 +1,4 @@
-# Maze - Sistema de Mapas de Segurança
+# Maze - Mapa de Monitoramente Territorial
 ## Descrição do Projeto
   Maze é um sistema de mapas interativos projetado para ajudar os usuários a identificar áreas com maior risco e evitar locais perigosos, promovendo maior segurança e bem-estar. O objetivo principal é fornecer informações úteis para que as pessoas possam se proteger de situações como roubo, assédio, estupro e outras formas de violência.
 
