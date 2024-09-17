@@ -1,0 +1,174 @@
+html,body {
+    height: 100dvh;
+
+}
+
+/* Cabeçalho */
+
+header {
+    padding-top: .3em;
+    display: flex;
+    justify-content: center;
+}
+
+/* NAVBAR */
+.cabecalho__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #7e217f;
+    backdrop-filter: blur(24px);
+    padding: 1em;
+    position: fixed;
+    z-index: 999;
+    width: 95%; 
+}
+
+.cabecalho__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.maze__logo {
+    display: none;
+    width: 8em;
+    height: 3em;
+}
+
+.logo__imagem {
+    width: 2em;
+    height: 1.8em;
+}
+
+.navbar__opcoes {
+    display: none;
+}
+
+.menu {
+    display: none;
+}
+
+.menu__lista {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    background-color: #7e217f;
+    padding: 2em .4em 4em 0.8em;
+    border-radius: 4px 0 0 4px;
+    text-align: left;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__lista img {
+    width: 200px;
+    height: 80px;
+}
+
+.lista__item {
+    padding: 2em 0;
+    overflow: hidden;
+}
+
+.lista__item__botao {
+    margin-top: 6em;
+}
+
+.item__link {
+    color: black;
+    text-decoration: none;
+    background-color: #fff;
+    font-size: 22px;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    padding: 20px 20px 20px 60px;
+    text-align: left;
+}
+
+.item__botao {
+    background-color: #686868;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 0.8em;
+    border: none;
+    text-decoration: none;
+    font-size: 22px;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    padding: 20px 20px 20px 60px;
+}
+
+.navbar__container {
+    display: flex;
+}
+
+.navbar__botao {
+    display: none;
+}
+
+.menu__botao {
+    background-color: #fff;
+    border: none;
+}
+
+.menu__botao .bar { 
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  margin: 5px auto;
+  background-color: #7e217f;
+  cursor: pointer;
+}
+
+.menu__botao .bar:nth-child(3){
+    width: 14px;
+}
+
+
+
+
+/* Main */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10em;
+}
+
+.home img {
+    width: 11.5em;
+    height: 14em;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 80px;
+}
+
+.btns button {
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 3px #7e217f;
+    width: 180px;
+    height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/*  Rodape  */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3em;
+}
