@@ -3,6 +3,11 @@ html,body {
 
 }
 
+#map {
+    width: 100dvw;
+    height: 70dvh;
+}
+
 /* Cabeçalho */
 
 header {

@@ -61,3 +61,26 @@ btn__entrar.addEventListener('click' , () =>{
     header.style.display = 'none';
     login.style.display = 'flex';
 });
+
+/* MAP JS */
+
+function initMap() {
+    // Coordenadas do centro do mapa
+    var location = { lat: -23.691301, lng: -46.657924 };
+
+    // Cria o mapa
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: location
+    });
+
+    // Cria o marcador
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'Aqui está o marcador!'
+    });
+}
+
+// Inicializa o mapa quando a página é carregada
+window.onload = initMap;

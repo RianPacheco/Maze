@@ -29,5 +29,8 @@
         "GPS_REQUIRED": "true"
       }
     }
+  },
+  "dependencies": {
+    "cordova": "^12.0.0"
   }
 }

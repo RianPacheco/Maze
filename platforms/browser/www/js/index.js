@@ -24,7 +24,8 @@ navList.addEventListener('click', () =>{
 });
 
 
-/* Importanto elementos */
+
+/* Tela login */
 
 const btn__entrar = document.querySelector('.entrar');
 const tela_home = document.querySelector('.home');
@@ -32,20 +33,9 @@ const body = document.querySelector('body');
 const header = document.querySelector('header');
 const login = document.querySelector('.login');
 const Anonimo = document.querySelector('.anonimo');
-const Inicial = document.querySelector('.inicial');
-const Maze__logo = document.querySelector('.maze__logo');
+const Inicial = document.querySelector('.inicial')
+const Maze__logo = document.querySelector('.maze__logo')
 const Entrar_submit = document.querySelector('.entrar_submit');
-
-
-/* Troca entre "telas" */
-
-Maze__logo.addEventListener('click', () => {
-    tela_home.style.display = "grid";
-    header.style.display = 'flex';
-    Maze__logo.style.display = 'none';
-    login.style.display = 'none';
-    Inicial.style.display = 'none';
-})
 
 Anonimo.addEventListener('click' , () => {
     tela_home.style.display = 'none';
@@ -71,3 +61,26 @@ btn__entrar.addEventListener('click' , () =>{
     header.style.display = 'none';
     login.style.display = 'flex';
 });
+
+/* MAP JS */
+
+function initMap() {
+    // Coordenadas do centro do mapa
+    var location = { lat: -23.691301, lng: -46.657924 };
+
+    // Cria o mapa
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: location
+    });
+
+    // Cria o marcador
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'Aqui está o marcador!'
+    });
+}
+
+// Inicializa o mapa quando a página é carregada
+window.onload = initMap;
