@@ -37,14 +37,6 @@ const Inicial = document.querySelector('.inicial')
 const Maze__logo = document.querySelector('.maze__logo')
 const Entrar_submit = document.querySelector('.entrar_submit');
 
-Maze__logo.addEventListener('click', () => {
-    tela_home.style.display = "grid";
-    header.style.display = 'flex';
-    Maze__logo.style.display = 'none';
-    login.style.display = 'none';
-    Inicial.style.display = 'none';
-})
-
 Anonimo.addEventListener('click' , () => {
     tela_home.style.display = 'none';
     Inicial.style.display = 'flex';
@@ -69,3 +61,47 @@ btn__entrar.addEventListener('click' , () =>{
     header.style.display = 'none';
     login.style.display = 'flex';
 });
+
+
+
+/* REGEX INPUT LOGIN */
+
+document.getElementById('telefone').addEventListener('input', function (e) {
+    // Remove tudo o que não for número
+    let value = e.target.value.replace(/\D/g, '');
+  
+    // Adiciona a formatação no número
+    if (value.length <= 2) {
+      value = value.replace(/(\d{2})/, '($1) ');
+    } else if (value.length <= 7) {
+      value = value.replace(/(\d{2})(\d{5})/, '($1) $2-');
+    } else {
+      value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    }
+  
+    // Define o valor formatado de volta no campo de input
+    e.target.value = value;
+  });
+
+/* MAP JS */
+
+function initMap() {
+    // Coordenadas do centro do mapa
+    var location = { lat: -23.691301, lng: -46.657924 };
+
+    // Cria o mapa
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: location
+    });
+
+    // Cria o marcador
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'Aqui está o marcador!'
+    });
+}
+
+// Inicializa o mapa quando a página é carregada
+window.onload = initMap;

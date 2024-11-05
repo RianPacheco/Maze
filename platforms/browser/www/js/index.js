@@ -62,6 +62,27 @@ btn__entrar.addEventListener('click' , () =>{
     login.style.display = 'flex';
 });
 
+
+
+/* REGEX INPUT LOGIN */
+
+document.getElementById('telefone').addEventListener('input', function (e) {
+    // Remove tudo o que não for número
+    let value = e.target.value.replace(/\D/g, '');
+  
+    // Adiciona a formatação no número
+    if (value.length <= 2) {
+      value = value.replace(/(\d{2})/, '($1) ');
+    } else if (value.length <= 7) {
+      value = value.replace(/(\d{2})(\d{5})/, '($1) $2-');
+    } else {
+      value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    }
+  
+    // Define o valor formatado de volta no campo de input
+    e.target.value = value;
+  });
+
 /* MAP JS */
 
 function initMap() {

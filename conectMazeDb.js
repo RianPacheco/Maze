@@ -1,5 +1,8 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://gupesouza0:87654321@maze.8zndh.mongodb.net/?retryWrites=true&w=majority&appName=Maze";
+function connect(){
+  const { Module } = require('module');
+
+  const { MongoClient, ServerApiVersion } = require('mongodb');
+  const uri = "mongodb+srv://gupesouza0:87654321@maze.8zndh.mongodb.net/?retryWrites=true&w=majority&appName=Maze";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -28,20 +31,23 @@ async function run() {
   const usuarios = db.collection("usuarios");
   const denuncias = db.collection("denuncias");
 
-  //criar: tabela.insertOne(-1-) or inserteMany(-1- * n elementos a atribuir)
-  //consultar: tabela.find(-1-)
-  //Update:tabela.update(-1-, -2-)
-  //deletar: tabela.deleteOne(-1-) or deleteMany(-1-)
-  //-1-(Pesquisa): {atributo: conteudo}
-  //-2-(pesquisa):Oque atualizar
-
-
-  //exemplo
-  // table
-  // .deleteOne({ title:"post1"} )
-  // .then(
-  //   res => console.log(`Updated documents`),
-  //   err => console.error(`Something went wrong`),
-  // );
-    
+  
   run().catch(console.dir);
+}
+
+module.exports = connect;
+
+//criar: tabela.insertOne(-1-) or inserteMany(-1- * n elementos a atribuir)
+//consultar: tabela.find(-1-)
+//Update:tabela.update(-1-, -2-)
+//deletar: tabela.deleteOne(-1-) or deleteMany(-1-)
+//-1-(Pesquisa): {atributo: conteudo}
+//-2-(pesquisa):Oque atualizar
+
+//exemplo
+// table
+// .deleteOne({ title:"post1"} )
+// .then(
+//   res => console.log(`Updated documents`),
+//   err => console.error(`Something went wrong`),
+// );

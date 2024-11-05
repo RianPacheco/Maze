@@ -62,15 +62,15 @@
                 <img src="./img/Menu_Icon_Invert.png" alt="Menu__Image">
                 <form>
                     <label for="Email">Email<br>
-                        <input type="text" placeholder="vamosganharafeceap@gmail.com">
+                        <input type="text" placeholder="Gmail@gmail.com">
                     </label>
                     <label for="Senha">Senha<br>
-                        <input type="password" placeholder="****************">
+                        <input type="password" placeholder="**********">
                     </label>
                     <label for="Telefone">Telefone<br>
-                        <input type="text" placeholder="(11) 93015-9782">
+                        <input type="text" id="telefone" placeholder="(11) 99999-9999">
                     </label>
-                    <button class="entrar_submit">Entrar</button>
+                    <button onclick=connect() class="entrar_submit">Entrar</button>
                 </form>
             </section>
     
@@ -84,10 +84,10 @@
         <footer>
             <p>Todos os direito autorais © - 2024</p>        
         </footer>
+        <script src="../conectMazeDb.js"> module.exports = connect;</script>
         <script src="cordova.js"></script>
         <script src="./js/index.js"></script>
-        <script async
-            src="KEY MAPS API">
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&language=ar&region=EG">
         </script>
     </body>
 </html>
