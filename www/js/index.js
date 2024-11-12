@@ -23,7 +23,13 @@ navList.addEventListener('click', () =>{
     navList.style.display = ('none');
 });
 
+const notificacao = document.querySelector('.notificacao');
+const sino = document.querySelector('sino');
+const notificacao_list = document.querySelector('notificacao_list');
 
+sino.addEventListener('click', () =>{
+    
+});
 
 /* Tela login */
 

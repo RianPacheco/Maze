@@ -41,9 +41,16 @@
                 <img src="./img/Maze_Text.png" alt="Logo Maze" class="maze__logo">
                 <div class="cabecalho__logo">
                     <a href="#">
-                        <img src="./img/Sino_Vetor.png" alt="Sino" class="logo__imagem">
+                        <img src="./img/Sino_Vetor.png" alt="Sino" class="logo__imagem" class="sino">
                     </a>
+                    <nav class="notificacao">
+                        <ul class="notificacao_lista">
+                            <img src="./img/Gps_Maze.PNG" alt="logo da maze e seta de localização">
+                            <p class="lista__item">Você não tem notificação disponivel</p>
+                        </ul>
+                    </nav>
                 </div>
+            </div>
         </header>
     
         <main>
@@ -77,7 +84,7 @@
             <!-- Mapa do Maze _ Conta do CEAP não funciona -->
             <section class="inicial">
                 <div id="map"></div>
-            </section>
+                <iframe src="https://www.google.com/maps/d/embed?mid=15s1FRp-tM4idnHr7gjJc9l_EHlKe2so&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>  </section>
     
         </main>
     
@@ -87,7 +94,7 @@
         <script src="../conectMazeDb.js"> module.exports = connect;</script>
         <script src="cordova.js"></script>
         <script src="./js/index.js"></script>
-        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&language=ar&region=EG">
+        <script async src="key no aguardo">
         </script>
     </body>
 </html>
