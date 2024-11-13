@@ -29,12 +29,13 @@ function Denun(lat, log, title, descricao, categ){
     const db = client.db("Maze"); // banco de dados
     const denuncias = db.collection("denuncias");
     denuncias
-    .InsertOne({
-        lat: lat ,
-        log: log,
-        title: title,
-        descri: descricao,
-        categoria: categ
+    .insertOne({
+        lat: (lat) ,
+        log: (log),
+        title: (title),
+        descri: (descricao),
+        categoria: (categ),
+        estado: "Não verificado"
     }).then(
         res => console.log("update"),
         err => console.log("error"),
@@ -42,20 +43,5 @@ function Denun(lat, log, title, descricao, categ){
 
     run().catch(console.dir);
   }
-  
-  module.exports = Denunec;
-  
-  //criar: tabela.insertOne(-1-) or inserteMany(-1- * n elementos a atribuir)
-  //consultar: tabela.find(-1-)
-  //Update:tabela.update(-1-, -2-)
-  //deletar: tabela.deleteOne(-1-) or deleteMany(-1-)
-  //-1-(Pesquisa): {atributo: conteudo}
-  //-2-(pesquisa):Oque atualizar
-  
-  //exemplo
-  // table
-  // .deleteOne({ title:"post1"} )
-  // .then(
-  //   res => console.log(`Updated documents`),
-  //   err => console.error(`Something went wrong`),
-  // );
+Denun(1111.111,111.11111,"vitu","gusgakgdkasjgdkas",["VITU DODIDO","VITY LNDO"])
+  module.exports = Denun;

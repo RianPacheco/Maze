@@ -1,6 +1,5 @@
 function Users(name, email, password, CPF, CEP){
     const { Module } = require('module');
-  
     const { MongoClient, ServerApiVersion } = require('mongodb');
     const uri = "mongodb+srv://gupesouza0:87654321@maze.8zndh.mongodb.net/?retryWrites=true&w=majority&appName=Maze";
   
@@ -29,34 +28,18 @@ function Users(name, email, password, CPF, CEP){
     const usuarios = db.collection("usuarios");
 
     usuarios
-    .InsertOne({
-        title: name ,
-        email: email,
-        pass: password,
-        cpf: CPF,
-        cep: CEP
+    .insertOne({
+        title: (name) ,
+        email: (email),
+        pass: (password),
+        cpf: (CPF),
+        cep: (CEP)
     }).then(
         res => console.log("update"),
         err => console.log("error"),
     );
-
-    
     run().catch(console.dir);
   }
-  
   module.exports = Users;
+  Users("admin","admin@gmail.com","12345","11111111-11","111111");
   
-  //criar: tabela.insertOne(-1-) or inserteMany(-1- * n elementos a atribuir)
-  //consultar: tabela.find(-1-)
-  //Update:tabela.update(-1-, -2-)
-  //deletar: tabela.deleteOne(-1-) or deleteMany(-1-)
-  //-1-(Pesquisa): {atributo: conteudo}
-  //-2-(pesquisa):Oque atualizar
-  
-  //exemplo
-  // table
-  // .deleteOne({ title:"post1"} )
-  // .then(
-  //   res => console.log(`Updated documents`),
-  //   err => console.error(`Something went wrong`),
-  // );
