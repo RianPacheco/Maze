@@ -1,4 +1,4 @@
-function connect(){
+function Users(name, email, password, CPF, CEP){
     const { Module } = require('module');
   
     const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -25,17 +25,26 @@ function connect(){
         await client.close();
       }  
     }
-    
     const db = client.db("Maze"); // banco de dados
-  
     const usuarios = db.collection("usuarios");
-    const denuncias = db.collection("denuncias");
-  
+
+    usuarios
+    .InsertOne({
+        title: name ,
+        email: email,
+        pass: password,
+        cpf: CPF,
+        cep: CEP
+    }).then(
+        res => console.log("update"),
+        err => console.log("error"),
+    );
+
     
     run().catch(console.dir);
   }
   
-  module.exports = connect;
+  module.exports = Users;
   
   //criar: tabela.insertOne(-1-) or inserteMany(-1- * n elementos a atribuir)
   //consultar: tabela.find(-1-)
