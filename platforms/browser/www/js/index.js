@@ -12,18 +12,31 @@ function onDeviceReady() {
 const botao = document.querySelector('.menu__botao');
 const navList = document.querySelector('.menu__lista');
 const menuNav = document.querySelector('.menu');
+const notificacao = document.querySelector('.notificacao');
+const sino = document.querySelector('.sino');
+const notificacaoList = document.querySelector('.notificacao_lista');
 
+// Toggle menu visibility
 botao.addEventListener('click', () => {
     menuNav.classList.toggle('menu-active');
-    menuNav.style.display = ('flex');
-    navList.style.display = ('flex');
+    navList.style.display = menuNav.classList.contains('menu-active') ? 'flex' : 'none';
 });
 
-navList.addEventListener('click', () =>{
-    navList.style.display = ('none');
+// Hide menu when an item is clicked
+navList.addEventListener('click', () => {
+    navList.style.display = 'none';
+    menuNav.classList.remove('menu-active');
 });
 
+// Toggle notification visibility
+sino.addEventListener('click', () => {
+    notificacao.classList.toggle('notificacao-active');
+});
 
+// Hide notification when clicked
+notificacaoList.addEventListener('click', () => {
+    notificacao.classList.remove('notificacao-active');
+});
 
 /* Tela login */
 
