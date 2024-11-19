@@ -19,6 +19,14 @@ function connect(){
         await client.connect();
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
+        const db = client.db("Maze"); // banco de dados
+  
+        const usuarios = db.collection("usuarios");
+        const denuncias = db.collection("denuncias");
+
+        const teste = await denuncias.find();
+        console.log(teste);
+
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
       } finally {
         // Ensures that the client will close when you finish/error
@@ -26,33 +34,11 @@ function connect(){
       }  
     }
     
-    const db = client.db("Maze"); // banco de dados
+
   
-    const usuarios = db.collection("usuarios");
-    const denuncias = db.collection("denuncias");
-  
-    denuncias
-    .find({})
-    .then(
-        res => console.log(),
-        err => console.log(),
-    )
+
     run().catch(console.dir);
   }
   
   module.exports = connect;
-  
-  //criar: tabela.insertOne(-1-) or inserteMany(-1- * n elementos a atribuir)
-  //consultar: tabela.find(-1-)
-  //Update:tabela.update(-1-, -2-)
-  //deletar: tabela.deleteOne(-1-) or deleteMany(-1-)
-  //-1-(Pesquisa): {atributo: conteudo}
-  //-2-(pesquisa):Oque atualizar
-  
-  //exemplo
-  // table
-  // .deleteOne({ title:"post1"} )
-  // .then(
-  //   res => console.log(`Updated documents`),
-  //   err => console.error(`Something went wrong`),
-  // );
+  connect();
