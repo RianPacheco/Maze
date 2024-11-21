@@ -1,4 +1,4 @@
-function Users(name, email, password, CPF, CEP){
+function Users(email, password, tel, CPF, CEP){
     const { Module } = require('module');
     const { MongoClient, ServerApiVersion } = require('mongodb');
     const uri = "mongodb+srv://gupesouza0:87654321@maze.8zndh.mongodb.net/?retryWrites=true&w=majority&appName=Maze";
@@ -32,6 +32,7 @@ function Users(name, email, password, CPF, CEP){
         title: (name) ,
         email: (email),
         pass: (password),
+        telf:(tel),
         cpf: (CPF),
         cep: (CEP)
     }).then(
@@ -41,5 +42,5 @@ function Users(name, email, password, CPF, CEP){
     run().catch(console.dir);
   }
   module.exports = Users;
-  Users("admin","admin@gmail.com","12345","11111111-11","111111");
+ 
   
