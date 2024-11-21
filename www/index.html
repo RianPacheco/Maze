@@ -1,99 +1,152 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="shortcut icon" href="./img/favicon_maze.png" type="image/x-icon">
-        <title>Maze - Mapa de Monitoramento Territorial</title>
-    </head>
-    <body>
-        <header>
-            <div class="cabecalho__navbar">
-                <div class="navbar__container">
-                    <button class="menu__botao">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </button>
-                    <nav class="menu">
-                        <ul class="menu__lista">
-                            <img src="./img/Gps_Maze.PNG" alt="logo da maze e seta de localização">
-                            <li class="lista__item">
-                                <a href="#fazer__denuncia" class="item__link">Fazer denuncia</a>
-                            </li>
-                            <li class="lista__item">
-                                <a href="#ver__denuncia" class="item__link">Ver suas denuncias</a>
-                            </li>
-                            <li class="lista__item">
-                                <a href="#indica__app" class="item__link">Indicar o Maze</a>
-                            </li>
-                            <li class="lista__item lista__item__botao">
-                                <a href="#suporte" class="item__botao">Suporte</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <img src="./img/Maze_Text.png" alt="Logo Maze" class="maze__logo">
-                <div class="cabecalho__logo">
-                    <a href="#" class="sino">
-                        <img src="./img/Sino_Vetor.png" alt="Sino" class="logo__imagem">
-                    </a>
-                    <nav class="notificacao">
+<html lang="pt_br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: https://ssl.gstatic.com https://maps.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon_maze.png" type="image/x-icon">
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo44nkZ9W-h1s5XfRmnr5HuLdC5Z4CZto"></script>
+    <title>Maze - Mapa de Monitoramento Territorial</title>
+</head>
+
+<body onload="initMap()" id="deviceready">
+    <header>
+        <div class="cabecalho__navbar">
+            <div class="navbar__container">
+                <button class="menu__botao">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="menu">
+                    <ul class="menu__lista">
                         <img src="./img/Gps_Maze.PNG" alt="logo da maze e seta de localização">
-                        <ul class="notificacao_lista">
-                            <li class="lista__item">Você não tem notificação disponivel</li>
-                        </ul>
-                    </nav>
-                </div>
+                        <li class="lista__item">
+                            <a href="#fazer__denuncia" class="item__link">Fazer denuncia</a>
+                        </li>
+                        <li class="lista__item">
+                            <a href="#ver__denuncia" class="item__link">Ver suas denuncias</a>
+                        </li>
+                        <li class="lista__item">
+                            <a href="#indica__app" class="item__link">Indicar o Maze</a>
+                        </li>
+                        <li class="lista__item lista__item__botao">
+                            <a href="#suporte" class="item__botao">Suporte</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </header>
-    
-        <main>
-    
-            <!-- Pagina Home -->
-            <section class="home">
-                <img src="./img/Menu_Icon.png" alt="Menu__Image">
-                <div class="btns">
-                    <button class="entrar">Entrar</button>  
-                    <button class="anonimo">Continuar anonimamente</button>
-                </div>
-            </section>
-    
-            <!-- Formulario -->
-            <section class="login">
-                <img src="./img/Menu_Icon_Invert.png" alt="Menu__Image">
-                <form>
-                    <label for="Email">Email<br>
-                        <input type="text" placeholder="Gmail@gmail.com">
-                    </label>
-                    <label for="Senha">Senha<br>
-                        <input type="password" placeholder="**********">
-                    </label>
-                    <label for="Telefone">Telefone<br>
-                        <input type="text" id="telefone" placeholder="(11) 99999-9999">
-                    </label>
-                    <button  class="entrar_submit">Entrar</button>
+            <img src="./img/Maze_Text.png" alt="Logo Maze" class="maze__logo">
+            <div class="cabecalho__logo">
+                <a href="#" class="sino">
+                    <img src="./img/Sino_Vetor.png" alt="Sino" class="logo__imagem">
+                </a>
+                <nav class="notificacao">
+                    <img src="./img/Gps_Maze.PNG" alt="logo da maze e seta de localização">
+                    <ul class="notificacao_lista">
+                        <li class="lista__item">Você não tem notificação disponivel</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Pagina Home -->
+        <section class="home">
+            <img src="./img/Menu_Icon.png" alt="Menu__Image">
+            <div class="btns">
+                <button class="entrar">Entrar</button>
+                <button class="anonimo">Continuar anonimamente</button>
+            </div>
+        </section>
+
+        <!-- Formulario -->
+        <section class="login">
+            <img src="./img/Menu_Icon_Invert.png" alt="Menu__Image">
+            <form>
+                <label for="Email">Email<br>
+                    <input type="text" placeholder="Gmail@gmail.com">
+                </label>
+                <label for="Senha">Senha<br>
+                    <input type="password" placeholder="**********">
+                </label>
+                <label for="Telefone">Telefone<br>
+                    <input type="text" id="telefone" placeholder="(11) 99999-9999">
+                </label>
+                <button class="entrar_submit">Entrar</button>
+            </form>
+        </section>
+
+        <!-- Mapa do Maze _ Conta do CEAP não funciona -->
+        <section class="inicial">
+            <div id="map"></div>
+        </section>
+
+        <!-- Modal para Fazer Denúncia -->
+        <div class="modal_fazer">
+            <div class="modal_fazer_conteudo">
+                <h2>Fazer Denúncia</h2>
+                <form id="formDenuncia">
+                    <!-- Tipo de denúncia -->
+                    <label for="tipoDenuncia">Tipo de Denúncia</label>
+                    <select id="tipoDenuncia">
+                        <option value="assedio">Assédio</option>
+                        <option value="roubo">Roubo</option>
+                        <option value="furto">Furto</option>
+                        <option value="homicidio">Homicídio</option>
+                        <option value="tentativaHomicidio">Tentativa de Homicídio</option>
+                    </select>
+
+                    <!-- Local da denúncia -->
+                    <label for="localDenuncia">Local da Denúncia</label>
+                    <input type="text" id="localDenuncia" placeholder="Informe o local da denúncia" required>
+
+                    <!-- Descrição -->
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" placeholder="Detalhes da denúncia..." required></textarea>
+
+                    <!-- Data e Hora -->
+                    <label for="dataHoraDenuncia">Data e Hora</label>
+                    <input type="datetime-local" id="dataHoraDenuncia" required>
+
+                    <!-- Enviar Denúncia -->
+                    <button type="submit">Enviar Denúncia</button>
                 </form>
-            </section>
-    
-            <!-- Mapa do Maze _ Conta do CEAP não funciona -->
-            <section class="inicial">
-                <div id="map"></div>
-                <iframe src="https://www.google.com/maps/d/embed?mid=15s1FRp-tM4idnHr7gjJc9l_EHlKe2so&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>  </section>
-    
-        </main>
-    
-        <footer>
-            <p>Todos os direito autorais © - 2024</p>        
-        </footer>
-        <script src="../ConnecMazeDb/ConnectBase.js"> module.exports = connect;</script>
-        <script src="cordova.js"></script>
-        <script src="./js/index.js"></script>
-        </script>
-    </body>
+
+                <!-- Botão Fechar Modal -->
+                <button class="fechar_modal">Fechar</button>
+            </div>
+        </div>
+
+
+        <!-- Modal para Visualizar Denúncias -->
+        <div class="modal_show">
+            <div class="modal_show_conteudo">
+                <h2>Minhas Denúncias</h2>
+                <div id="listaDenuncias">
+                    <!-- Aqui será exibida a lista de denúncias cadastradas -->
+                    <p>Você ainda não fez nenhuma denúncia.</p>
+                </div>
+                <button class="fechar_modal">Fechar</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Todos os direito autorais © - 2024</p>
+    </footer>
+    <script type="module" src="../ConnecMazeDb/ConnectBase.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
 </html>
